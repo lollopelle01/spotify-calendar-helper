@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotify-calendar-helper"
+version = "0.1.0"
+description = "Genera e aggiorna playlist Spotify (per artista, genere...) a partire dalle playlist del calendario mensile."
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+sch = "spotify_calendar_helper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+# I test "live" (tests/live/) usano la rete e il vero .env: si lanciano solo con `pytest -m live -s`.
+addopts = "-m 'not live'"
+markers = [
+    "live: sonda l'API reale di Spotify (rete, login nel browser); esclusi dalla suite normale",
+]

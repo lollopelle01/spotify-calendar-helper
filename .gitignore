@@ -1,0 +1,22 @@
+# --- Segreti e dati personali: NON devono mai finire su GitHub ---
+.env
+.env.*
+!.env.example
+config.toml
+data/
+*.token.json
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+build/
+dist/
+
+# --- Editor / sistema ---
+.DS_Store
+.idea/
+.vscode/

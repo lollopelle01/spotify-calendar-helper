@@ -1,0 +1,50 @@
+# Copia questo file in "config.toml" (ignorato da git) e adattalo.
+# Qui NON vanno segreti, solo le regole di funzionamento.
+# Le chiavi mancanti assumono i valori di default mostrati qui.
+
+[calendar]
+# Come riconoscere le playlist mensili dal nome. Formati integrati:
+#   "2025-03 ...", "2025/03", "03/2025", "Marzo 2025"
+# Se i tuoi nomi sono diversi, scrivi una regex con i gruppi nominati
+# (?P<year>...) e (?P<month>...), dove month può essere un numero o un mese in italiano.
+# Esempio: name_regex = "^Cal (?P<month>\\w+) (?P<year>\\d{4})$"
+name_regex = ""
+# ID di playlist da non considerare mai parte del calendario.
+ignore_playlist_ids = []
+
+[artists]
+# Crea la playlist di un artista solo se ha almeno questo numero di brani nel calendario.
+min_tracks = 4
+# true  = ogni brano va solo nella playlist del primo artista
+# false = il brano va nella playlist di tutti gli artisti coinvolti
+primary_artist_only = true
+playlist_prefix = "Artista - "
+
+[genres]
+enabled = true
+# Da dove prendere i generi di un artista: "spotify" | "lastfm" | "musicbrainz"
+# (da decidere dopo lo spike, vedi AGENTS.md D1/D2).
+provider = "musicbrainz"
+# Crea la playlist di un genere solo se ha almeno questo numero di brani.
+min_tracks = 8
+playlist_prefix = "Genere - "
+# Mappa generi fini -> macro-generi, modificabile a mano.
+map_file = "genre_map.toml"
+# true = un brano può stare in più playlist di genere
+multi_genre_per_track = true
+# Quanti giorni restano validi i generi salvati in data/genres_cache.json
+cache_ttl_days = 90
+
+[sync]
+# "additive" = aggiunge i brani mancanti, non rimuove mai
+# "mirror"   = come additive, ma con --prune rimuove i brani spariti dal calendario
+mode = "additive"
+# Le playlist create sono private, salvo scelta esplicita.
+public = false
+# Quanti brani per singola chiamata di aggiunta. Ridurre se Spotify rifiuta batch grandi.
+# (Valore prudente finché lo spike D4 non conferma il massimo reale.)
+add_batch_size = 10
+# Se il piano crea più di N playlist chiede conferma (salvo --yes).
+confirm_if_creating_more_than = 20
+# true = lo stesso brano in versioni diverse (titolo+artista uguali) conta una volta sola.
+dedupe_same_song = false

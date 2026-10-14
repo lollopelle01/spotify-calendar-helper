@@ -1,0 +1,96 @@
+# genre_map.toml: mappa dai generi/tag fini ai macro-generi usati per le playlist.
+#
+# Formato: "Nome Macro-Genere" = ["tag1", "tag2", ...]
+# - I tag sono case-insensitive e possono usare trattini o spazi indifferentemente.
+# - Il nome del macro-genere stesso è sempre riconosciuto automaticamente.
+# - I tag non elencati qui finiscono nel report di `sch genres-report` per aggiornare la mappa.
+# - L'ordine delle sezioni determina la priorità in caso di match parziale ugualmente lungo.
+#
+# Modifica liberamente: aggiungi tag che compaiono nel report dei generi non mappati.
+
+"Rock" = [
+    "rock", "classic rock", "hard rock", "soft rock", "album rock",
+    "british invasion", "heartland rock", "pub rock", "glam rock",
+    "progressive rock", "art rock",
+]
+
+"Indie/Alternative" = [
+    "indie", "indie rock", "indie pop", "alternative rock", "alternative",
+    "dream pop", "bedroom pop", "lo-fi", "lo fi", "shoegaze", "post-punk",
+    "new wave", "art punk", "jangle pop", "noise pop", "emo",
+    "post punk revival",
+]
+
+"Pop" = [
+    "pop", "dance pop", "synth pop", "electropop", "chamber pop",
+    "baroque pop", "adult contemporary", "easy listening",
+    "bubblegum pop", "teen pop", "k-pop",
+]
+
+"Cantautorato" = [
+    "cantautorato", "cantautore", "cantautori", "singer-songwriter",
+    "folk pop", "acoustic pop", "italian folk", "new acoustic",
+    "americana", "country folk",
+]
+
+"Jazz" = [
+    "jazz", "jazz fusion", "jazz blues", "cool jazz",
+    "bebop", "hard bop", "free jazz", "soul jazz", "vocal jazz",
+    "nu jazz", "contemporary jazz",
+]
+
+"Hip Hop / Rap" = [
+    "hip hop", "hip-hop", "rap", "trap", "rap italiano", "trap italiano",
+    "grime", "drill", "conscious hip hop", "boom bap", "alternative hip hop",
+    "southern hip hop", "east coast hip hop", "west coast hip hop",
+]
+
+"R&B / Soul" = [
+    "r&b", "rnb", "soul", "neo soul", "funk", "contemporary r&b",
+    "new jack swing", "quiet storm", "motown", "northern soul",
+]
+
+"Electronic" = [
+    "electronic", "elettronica", "electronica", "house", "techno",
+    "ambient", "idm", "drum and bass", "dnb", "dubstep", "garage",
+    "trance", "breakbeat", "trip hop", "downtempo", "chillout",
+    "minimal", "deep house", "tech house",
+]
+
+"Metal" = [
+    "metal", "heavy metal", "thrash metal", "death metal", "black metal",
+    "doom metal", "power metal", "progressive metal", "nu metal",
+    "metalcore", "post-metal",
+]
+
+"Punk" = [
+    "punk", "punk rock", "pop punk", "hardcore punk",
+    "skate punk", "folk punk", "anarcho-punk",
+]
+
+"Folk / Etnica" = [
+    "folk", "folk rock", "traditional folk", "world music", "ethnic",
+    "celtic", "bluegrass", "roots", "tejano",
+]
+
+"Latin" = [
+    "latin", "reggaeton", "salsa", "bachata", "cumbia", "latin pop",
+    "bossa nova", "samba", "tango", "flamenco", "latin alternative",
+    "mpb",
+]
+
+"Classica" = [
+    "classica", "classical", "orchestra", "chamber music",
+    "opera", "contemporary classical", "baroque", "romantic era",
+    "minimalism", "neoclassical",
+]
+
+"Soundtrack / Colonne sonore" = [
+    "soundtrack", "colonna sonora", "film score", "tv soundtrack",
+    "video game music", "ost", "cinematic",
+]
+
+"Blues" = [
+    "blues", "electric blues", "country blues", "chicago blues",
+    "delta blues", "rhythm and blues",
+]
